@@ -1,0 +1,22 @@
+private String generatedUrl;    
+    @PostConstruct  
+    protected void initialize() {  
+        // creates a builder instance with current request URL  
+        RequestParameterBuilder rpBuilder = new RequestParameterBuilder(true);
+	Collection<Integer> list = new ArrayList<Integer>();  
+                list.add("Hello");  
+                list.add("PFExt");  
+                list.add("reader");    
+        try {   
+		rpBuilder.paramJson("d", new Date()); 		
+            	rpBuilder.paramJson("list", list, getTypeGenericList());  
+  
+	} catch (UnsupportedEncodingException e) {  
+            // handle encoding issues
+        }  
+        // build URL  
+        generatedUrl = rpBuilder.build(); 
+    public String getTypeGenericList() {  
+        return "java.util.Collection<java.lang.String>";  
+    } 
+}

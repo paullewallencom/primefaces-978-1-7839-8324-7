@@ -1,0 +1,22 @@
+<h:panelGrid columns="2" columnClasses="label, value" styleClass="grid">
+	<h:outputText value="Firstname: *" />
+	<p:inputText id="firstname" required="true" label="Firstname"
+	 title="#{component.valid? 'Please enter firstname':'Firstname cannot be empty'}"
+	 value="#{employeeRegistration.jobseeker.firstname}" />
+	<h:outputText value="Lastname: *" />
+	<p:inputText id="lastname" required="true" label="Lastname"
+	 title="#{component.valid? 'Please enter lastname':'Lastname cannot be empty'}"
+	 value="#{employeeRegistration.jobseeker.lastname}" />
+
+	<h:outputText value="Age: * " />
+	<p:inputText id="age" required="true" label="Age" title="#{component.valid? 'Please enter 	Age':'Age cannot be empty'}"
+	 value="#{employeeRegistration.jobseeker.age}" />
+	<h:outputText value="Sex: " title="Please enter Sex" />
+	<p:inputText id="sex" value="#{employeeRegistration.jobseeker.sex}" />
+	<h:outputText value="MaritalStatus: " title="Please enter MaritalStatus" />
+	<p:inputText id="status" value="#{employeeRegistration.jobseeker.maritalStatus}" />                        
+	<h:outputText value="Skip to last: " />
+	<h:selectBooleanCheckbox value="#{employeeRegistration.skip}" />
+</h:panelGrid>
+	<pe:tooltip global="true" myPosition="left center" for="@(.ui-state-error)"
+	  atPosition="right center" />

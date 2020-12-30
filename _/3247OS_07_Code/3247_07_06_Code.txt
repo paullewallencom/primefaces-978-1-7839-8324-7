@@ -1,0 +1,3 @@
+<pe:importConstants className="org.primefaces.extensions.util.Constants" var="PFEConstants" />  
+Library Name:  
+<h:outputText value="#{PFEConstants.LIBRARY}" />

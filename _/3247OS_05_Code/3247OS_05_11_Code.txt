@@ -1,0 +1,4 @@
+<pe:timeline value="#{timelineController.model}"
+    min="#{timelineController.min}" max="#{timelineController.max}"   
+    zoomMin="#{timelineController.zoomMin}"zoomMax="#{timelineController.zoomMax}"
+    showNavigation="true"/>

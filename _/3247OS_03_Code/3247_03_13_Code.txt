@@ -1,0 +1,14 @@
+<h:panelGroup id="wrapper" layout="block">  
+    <div data-property="font-size" class="dial first">
+	<ul>  
+            <li data-value="8px">8px</li>  
+            <li data-value="10px">10px</li>  
+            <li data-value="12px">12px</li>  
+            <li data-value="14px">14px</li> 
+	</ul>
+    </div>
+</h:panelGroup>
+
+<pe:waypoint id="waypoint" for="@(.dial li)" forContext="@(.dial ul)" offset="25">  
+    <pe:javascript event="reached" execute="handleWaypoint(ext);"/>  
+</pe:waypoint>  

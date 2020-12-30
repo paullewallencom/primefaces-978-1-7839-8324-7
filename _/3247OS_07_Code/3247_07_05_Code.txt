@@ -1,0 +1,3 @@
+<p:inputText id="enteredLocale" value="#{localeController.enteredLocale}" required="true">  
+    <pe:convertLocale/>  
+</p:inputText>

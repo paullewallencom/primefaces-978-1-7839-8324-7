@@ -1,0 +1,47 @@
+<pe:dynaForm id="dynaForm" value="#{employeeRegistration.model}"
+ var="data" autoSubmit="true" buttonBarPosition="bottom" widgetVar="dynaFormWidget">
+     <pe:dynaFormControl styleClass="pe-dynaform-label">
+	<h:outputText value="#{data}" />
+     </pe:dynaFormControl>
+     <pe:dynaFormControl type="input" for="input">
+     <p:inputText id="input" value="#{data.value}" required="#{data.required}" />
+     </pe:dynaFormControl>
+     <pe:dynaFormControl type="select1" for="country" styleClass="select">
+     <p:selectOneMenu id="country" value="#{data.value}" required="#{data.required}">
+	<f:selectItems value="#{employeeRegistration.countries}" />
+     </p:selectOneMenu>
+     </pe:dynaFormControl>
+     <pe:dynaFormControl type="select2" for="city" styleClass="select">
+     <p:selectOneMenu id="city" value="#{data.value}" required="#{data.required}">
+	<f:selectItems value="#{employeeRegistration.cities}" />
+     </p:selectOneMenu>
+     </pe:dynaFormControl>
+     <pe:dynaFormControl type="select3" for="country" styleClass="select">
+     <p:selectOneMenu id="country1" value="#{data.value}" widgetVar="$country1" required="#		{data.required}">
+	<f:selectItems value="#{employeeRegistration.countries}" />
+     </p:selectOneMenu>
+     </pe:dynaFormControl>
+     <pe:dynaFormControl type="select4" for="city" styleClass="select" widgetVar="$city1">
+     <p:selectOneMenu id="city1" value="#{data.value}" required="#{data.required}">
+	<f:selectItems value="#{employeeRegistration.cities}" />
+     </p:selectOneMenu>
+     </pe:dynaFormControl>
+     <pe:dynaFormControl type="desc" for="desc">
+     <p:inputTextarea id="desc" value="#{data.value}" required="#{data.required}" 		autoResize="false" />
+     </pe:dynaFormControl>
+     <f:facet name="headerRegular">
+	<div>
+	<h:outputText value="Current Address details" />
+	</div>
+     </f:facet>
+     <f:facet name="headerExtended">
+	<div>
+	<h:outputText value="Permanent Address details" />
+	</div>
+     </f:facet>
+     <f:facet name="buttonBar">
+     <p:commandButton type="button" value="Show/hide Permanent address details" style="margin-		left: 5px;"
+     onclick="PF('dynaFormWidget').toggleExtended();" />
+     </f:facet> 
+</pe:dynaForm>
+

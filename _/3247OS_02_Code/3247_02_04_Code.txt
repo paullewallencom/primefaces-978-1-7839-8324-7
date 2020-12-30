@@ -1,0 +1,7 @@
+@ManagedBean
+@ViewScoped
+public class EmployeeRegistration implements Serializable {
+	            private static final long serialVersionUID = 1L;
+	private JobSeeker jobseeker = new JobSeeker();
+	   //getters and setters
+}

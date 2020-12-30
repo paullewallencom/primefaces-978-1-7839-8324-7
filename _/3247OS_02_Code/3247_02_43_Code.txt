@@ -1,0 +1,22 @@
+<p:accordionPanel activeIndex="-1">
+     <p:tab title="AboutUS">
+	   <h:panelGrid id="aboutusgrid" columns="2" cellpadding="10">
+		<p:graphicImage value="/resources/images/aboutus.png" />
+		<h:outputText value="#{adminController.aboutus}" />
+	   </h:panelGrid>
+	<p:commandButton value="Edit" actionListener="#{adminController.aboutusEdit}"
+	update="editor1panel"></p:commandButton>
+	<p:outputPanel id="editor1panel">
+	<pe:ckEditor id="editor1" value="#{adminController.aboutus}"
+	toolbar="[['Cut','Copy','Paste','PasteText','PasteFromWord','-', 'SpellChecker']]"
+	interfaceColor="\##{adminController.color1}" rendered="#{adminController.aboutusFlag}" width="500" />
+	<p:outputPanel rendered="#{adminController.aboutusFlag}">
+	<p:colorPicker id="popupCP1" value="#{adminController.color1}">
+	</p:colorPicker>
+	<p:commandButton value="Submit color" update="editor1" />
+	</p:outputPanel>
+	<p:commandButton value="Save" actionListener="#{adminController.aboutusSave}"
+	update="editor1panel,aboutusgrid" rendered="#{adminController.aboutusFlag}"></p:commandButton>
+	</p:outputPanel>
+    </p:tab>
+</p:accordionPanel>

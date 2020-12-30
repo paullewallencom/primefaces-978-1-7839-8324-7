@@ -1,0 +1,7 @@
+public enum ProjectStage {
+    Development,
+    UnitTest,
+    SystemTest,
+    UserAcceptanceTest,
+    Production;
+}

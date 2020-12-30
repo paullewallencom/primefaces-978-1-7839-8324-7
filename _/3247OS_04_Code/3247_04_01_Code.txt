@@ -1,0 +1,34 @@
+<pe:masterDetail id="masterDetail" level="#{masterDetailController.currentLevel}">
+
+    <pe:masterDetailLevel level="1" levelLabel="countries">
+        <p:dataTable id="countries" value="#{masterDetailController.countries}" var="country">
+            <p:column headerText="Country">
+                <p:commandLink value="#{country.name}">
+                    <pe:selectDetailLevel contextValue="#{country}"/>
+                </p:commandLink>
+            </p:column>
+            <p:column headerText="Number of countries publishing packt books">
+                <h:outputText value="#{fn:length(country.countriesWithPackPublish)}"/>
+            </p:column>
+        </p:dataTable>
+    </pe:masterDetailLevel>
+
+    <pe:masterDetailLevel level="2" contextVar="country" levelLabel="Cities under#{country.name} leagues">
+        <p:dataTable id="countries" value="#{country.countriesWithPacktPublish}" var="city">
+            <p:column headerText="Cinty">
+                <p:commandLink value="#{city.name}">
+                    <pe:selectDetailLevel contextValue="#{city}"/>
+                </p:commandLink>
+            </p:column>
+            <p:column headerText="PinCode">
+                <h:outputText value="#{city.pincode}"/>
+            </p:column>
+        </p:dataTable>
+    </pe:masterDetailLevel>
+ <h:panelGrid columns="1">
+            <p:commandButton value="Go to counties" icon="ui-icon-arrowthickstop-1-w">
+                <pe:selectDetailLevel level="1"/>
+            </p:commandButton>
+        </h:panelGrid>
+    </pe:masterDetailLevel>
+</pe:masterDetail>

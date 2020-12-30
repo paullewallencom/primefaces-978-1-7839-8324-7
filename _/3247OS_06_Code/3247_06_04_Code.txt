@@ -1,0 +1,3 @@
+< h:outputText value="left aligned content" style="float:left" >
+<h:outputText value="right aligned content" style="float:right" >
+< h:outputText value="center aligned content" style="center" >

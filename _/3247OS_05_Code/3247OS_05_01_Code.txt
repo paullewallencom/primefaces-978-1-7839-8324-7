@@ -1,0 +1,4 @@
+<pe:timePicker value="#{timePickerController.time}" mode="popup" 
+ timeSeparator="-" startHours="8" endHours="20" startMinutes="10" endMinutes="40" 
+ intervalMinutes="10" showon="button" showCloseButton="true" showDeselectButton="true" 
+ showNowButton="true" rows="3" showPeriod="true" widgetVar="customTimeWidget" label="Custom time picker"/>

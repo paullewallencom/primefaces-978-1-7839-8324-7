@@ -1,0 +1,14 @@
+<p:panel header="Export PDF and Excel data">
+    <p:commandLink id="pdf" ajax="false">
+        <p:graphicImage value="/resources/images/pdf.png"/>
+        <pe:exporter type="pdf" target="investmentsTable" fileName="InvestmentsTable" tableTitle="Investements Analysis" orientation="Landscape"
+facetBackground="#FF00FF" facetFontSize="12" facetFontColor="#ff00ff" facetFontStyle="BOLD"
+                     cellFontColor="#00fff0" cellFontSize="10" cellFontStyle="NORMAL"/>
+    </p:commandLink>
+    <p:spacer height="30"/>
+    <p:commandLink id="xlsx" ajax="false">
+        <p:graphicImage value="/resources/images/excel.png"/>
+        <pe:exporter type="xlsx" target="investmentsTable" fileName="InvestmentsTable" tableTitle="Investements Analysis"
+facetBackground="#DD017" facetFontSize="12" facetFontColor="#ff00ff" facetFontStyle="BOLD"  fontName="Courier New" cellFontColor="#00ff00" cellFontSize="10" cellFontStyle="NORMAL"/>
+    </p:commandLink>
+</p:panel>

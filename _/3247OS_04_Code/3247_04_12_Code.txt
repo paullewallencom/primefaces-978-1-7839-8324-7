@@ -1,0 +1,17 @@
+<pe:fluidGrid id="fluidGrid" value="#{fluidGridController.items}" var="data"
+              resizeBound="false" hGutter="20" widgetVar="fluidGridWdgt">
+    <pe:fluidGridItem type="input">
+        <div class="dynaFormLabel">
+            <p:outputLabel for="txt" value="#{data.label}"/>
+        </div>
+        <p:inputText id="txt" value="#{data.value}" required="#{data.required}"/>
+    </pe:fluidGridItem>
+    <pe:fluidGridItem type="select" styleClass="select">
+        <div class="dynaFormLabel">
+            <p:outputLabel for="menu" value="#{data.label}"/>
+        </div>
+        <p:selectOneMenu id="menu" value="#{data.value}" required="#{data.required}">
+            <f:selectItems value="#{data.selectItems}"/>
+        </p:selectOneMenu>
+    </pe:fluidGridItem>
+</pe:fluidGrid>

@@ -1,0 +1,3 @@
+<p:autoComplete id="autoComplete" value="#{autoCompleteController.value}"  
+ completeMethod="#{autoCompleteController.complete}" />
+<pe:keyFilter for="autoComplete" testFunction="return c == 'C';"/>

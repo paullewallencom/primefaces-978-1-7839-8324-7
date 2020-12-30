@@ -1,0 +1,5 @@
+<pe:imageAreaSelect id="areaSelect" for="imageID"
+             autoHide="true" aspectratio="4:3" handles="false" movable="false" 
+             persistent="false" resizable="false" keyboardSupport="true">
+            <p:ajax event="selectEnd" listener="#{imageAreaSelectController.selectEndListener}"/>
+</pe:imageAreaSelect>

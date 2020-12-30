@@ -1,0 +1,16 @@
+<h:outputStylesheet id="fluidGridCSS">  
+    .pe-fluidgrid {  
+        max-width: 500px;  
+    }  
+    .pe-fluidgrid .pe-fluidgrid-item {  
+        width:  30px;  
+        height: 40px;  
+        border-radius: 6px;  
+        padding-top: 1em;  
+        text-align: center;  
+    }      
+    .pe-fluidgrid-item.w2 {width: 100px;}  
+    .pe-fluidgrid-item.w3 {width: 200px;}      
+    .pe-fluidgrid-item.h2 {height: 100px;}  
+    .pe-fluidgrid-item.h3 {height: 2000px;}  
+</h:outputStylesheet>

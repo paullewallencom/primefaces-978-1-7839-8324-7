@@ -1,0 +1,3 @@
+<pe:ajaxErrorHandler type="javax.faces.application.ViewExpiredException" button="Reload Page"
+       buttonOnclick="document.location.href=document.location.href;"
+ body="Due to inactivity the page needs to be RELOADED" title="Page is expired"/>

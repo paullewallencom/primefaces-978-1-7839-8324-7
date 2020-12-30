@@ -1,0 +1,19 @@
+<p:panel header="Contact Information">
+  <h:messages errorClass="error" />
+   <h:panelGrid columns="2" columnClasses="label, value">
+      <h:outputText value="Frameworks Expertise:" />
+  <pe:triStateManyCheckbox id="TriBasic" value="#{employeeRegistration.selectedFrameworkOptions}"
+    layout="pageDirection" stateOneTitle="not matter" stateTwoTitle="love it"            stateThreeTitle="dislikes">
+	<f:selectItems value="#{employeeRegistration.allFrameworkOptions}" />
+	</pe:triStateManyCheckbox>
+	<h:outputText value="Database Expertise:" />
+	<pe:triStateManyCheckbox id="TriAjax" value="#{employeeRegistration.selectedDBOptions}"
+	stateOneIcon="ui-icon-home" stateTwoIcon="ui-icon-heart" stateThreeIcon="ui-icon-star" 		tabindex="2">
+	<f:selectItem itemLabel="Oracle" itemValue="Oracle" />
+	<f:selectItem itemLabel="MySQL" itemValue="MySQL" />
+	<f:selectItem itemLabel="SQLServer" itemValue="SQL Server" />
+	</pe:triStateManyCheckbox>
+	<h:outputText value="Overall Expertise:" />
+	<pe:triStateCheckbox value="#{employeeRegistration.avgrating}" />
+	</h:panelGrid>
+</p:panel>

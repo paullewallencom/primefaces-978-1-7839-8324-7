@@ -1,0 +1,58 @@
+<pe:masterDetail id="masterDetail" level={masterDetailController.currentLevel}"showBreadcrumb="false">
+    <f:facet name="header">
+        <p:messages showDetail="true"/>
+        <h:panelGroup layout="block">
+            <h:panelGroup styleClass="ui-state-default ui-corner-all
+                                  #{masterDetailController.currentLevel eq 1 ? 'ui-state-hover' : ''}">
+                <h:outputText value="Personal"/>
+            </h:panelGroup>
+            <h:panelGroup styleClass="ui-state-default ui-corner-all
+                                  #{masterDetailController.currentLevel eq 2 ? 'ui-state-hover' : ''}">
+                <h:outputText value="Address"/>
+            </h:panelGroup>
+        </h:panelGroup>
+    </f:facet>
+
+    <pe:masterDetailLevel level="1">
+        <p:panel header="Personal Details">
+            <h:panelGrid columns="2">
+                <h:outputText value="Firstname: *"/>
+                <p:inputText required="true" label="Firstname"
+                             value="#{masterDetailController.user.firstname}"/>
+                <h:outputText value="Lastname: *"/>
+                <p:inputText required="true" label="Lastname"
+                             value="#{masterDetailController.user.lastname}"/>
+                <h:outputText value="Age: "/>
+                <p:inputText value="#{masterDetailController.user.age}"/>
+            </h:panelGrid>
+        </p:panel>
+        <p:commandButton value="Next" process="masterDetail"
+                          icon="ui-icon-arrowthick-1-e">
+            <pe:selectDetailLevel step="1"/>
+        </p:commandButton>
+        <p:commandButton value="Go to Save" process="masterDetail"
+                         icon="ui-icon-arrowthickstop-1-e">
+            <pe:selectDetailLevel level="2"/>
+        </p:commandButton>
+    </pe:masterDetailLevel>
+
+    <pe:masterDetailLevel level="2">
+        <p:panel header="Adress Details">
+            <h:panelGrid columns="2">
+                <h:outputText value="Street: "/>
+                <p:inputText value="#{masterDetailController.user.street}"/>
+                <h:outputText value="Postal Code: "/>
+                <p:inputText value="#{masterDetailController.user.postalCode}"/>
+                <h:outputText value="City: "/>
+                <p:inputText value="#{masterDetailController.user.city}"/>
+            </h:panelGrid>
+        </p:panel>
+        <p:commandButton value="Back" icon="ui-icon-arrowthick-1-w"
+                         process="@this" immediate="true">
+            <pe:selectDetailLevel step="-1"/>
+        </p:commandButton>
+    </pe:masterDetailLevel>
+   <p:commandButton value="Submit" process="masterDetail"
+                actionListener="#{masterDetailController.save}" icon="ui-icon-disk">        </p:commandButton>
+    </pe:masterDetailLevel>
+</pe:masterDetail>

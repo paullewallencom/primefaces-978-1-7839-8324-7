@@ -1,0 +1,15 @@
+<pe:remoteCommand id="applySalesCommand" name="applySales" process="@this" 
+    actionListener="#{remoteCommandController.parametersAssigned}">
+    <pe:assignableParam name="branch" assignTo="#{remoteCommandController.branch}"/>
+    <pe:assignableParam name="circle" assignTo="#{remoteCommandController.sales}">
+        <pe:convertJson />
+    </pe:assignableParam>
+</pe:remoteCommand>
+<script type="text/javascript">
+    sales = {
+        revenue: $50,
+        gain: $20,
+        profit: 30%
+    };
+</script>
+<p:commandButton value="Apply Data" type="button" onclick="applyData('UK',JSON.stringif(sales))" />

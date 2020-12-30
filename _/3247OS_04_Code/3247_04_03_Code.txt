@@ -1,0 +1,45 @@
+<pe:masterDetail id="masterDetail" 
+selectLevelListener="#{ masterDetailController.handleNavigation}"
+                 showAllBreadcrumbItems="true">
+    <f:facet name="header">
+        <p:messages showDetail="false" showSummary="true"/>
+    </f:facet>
+    <pe:masterDetailLevel level="1">
+        <f:facet name="label">
+            <h:outputFormat value="Personal Details">
+        </f:facet>
+        <p:dataTable id="persons" value="#{masterDetailController.persons}" var="person">
+            <p:column headerText="First Name">
+                <p:commandLink value="#{person.firstname}">
+                    <pe:selectDetailLevel contextValue="#{person}"/>
+                </p:commandLink>
+            </p:column>
+            <p:column headerText="Last Name">
+                <h:outputText value="#{person.lastname}"/>
+            </p:column>
+            <p:column headerText="Age">
+                <h:outputText value="#{person.age}"/>
+            </p:column>
+        </p:dataTable>
+    </pe:masterDetailLevel>
+    <pe:masterDetailLevel level="2" contextVar="person" levelLabel="Person Detail">
+        <h:panelGrid id="personDetail" columns="2">
+            <h:outputText value="First Name"/>
+            <p:inputText value="#{person.firstname}" required="true" label="First Name"/>
+            <h:outputText value="Last Name"/>
+            <p:inputText value="#{person.lastname}" required="true" label="Last Name"/>
+            <h:outputText value="Age"/>
+            <p:inputText value="#{person.age}" required="true" label="Age">          <p:commandButton value="Save with success" process="masterDetail"
+                         action="#{masterDetailController.saveSuccess(person)}"
+                         icon="ui-icon-disk">
+ 	<pe:selectDetailLevel level="1"/>
+	</p:commandButton>
+        <p:commandButton value="Save with failure" process="masterDetail"
+                         action="#{masterDetailController.saveFailure(person)}"
+                         icon="ui-icon-disk">
+            <pe:selectDetailLevel level="1"/>
+        </p:commandButton>
+        <p:commandButton type="button" value="Delete" action="#{masterDetailController.delete(person)}" 
+	onclick="alert('Are you sure you want to delete this person?')"/>
+    </pe:masterDetailLevel>
+</pe:masterDetail>

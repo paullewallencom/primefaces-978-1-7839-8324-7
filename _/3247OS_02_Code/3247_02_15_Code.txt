@@ -1,0 +1,24 @@
+@ManagedBean
+@ViewScoped
+public class EmployeeRegistration implements Serializable {
+private Map<String, String> selectedFrameworkOptions;
+	private Map<String, String> selectedDBOptions;
+	private Map<String, String> allFrameworkOptions;
+	private String avgrating;
+	@PostConstruct
+	public void init() {
+		allFrameworkOptions = new HashMap<String, String>();
+		allFrameworkOptions.put("Label for JSF", "JSF");
+		allFrameworkOptions.put("Label for Spring", "Spring");
+		allFrameworkOptions.put("Label for Struts", "Struts");
+		// default will created with state=1
+		selectedFrameworkOptions = new HashMap<String, String>();
+		selectedFrameworkOptions.put("JSF", "1");
+		selectedDBOptions = new HashMap<String, String>();
+		selectedDBOptions.put("Oracle", "1");
+		selectedDBOptions.put("MySQL", "1");
+		selectedDBOptions.put("SQLServer", "2");
+		avgrating = "1";
+	}
+      //getters and setters
+}

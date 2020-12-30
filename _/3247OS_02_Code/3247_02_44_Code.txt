@@ -1,0 +1,23 @@
+@ManagedBean
+@ApplicationScoped
+public class AdminController implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private String aboutus;
+	private String communication;
+	private String privacy;
+	private String disclaimer;
+	private String help;
+	private String color="1234FF";
+	@PostConstruct
+	public void init() {
+aboutus = "Some content goes here”;
+	}
+	public void aboutusEdit() {
+		aboutusFlag = true;
+	}
+	public void aboutusSave() {
+		aboutus = aboutus.replaceAll("\\<.*?>","");
+		aboutusFlag = false;
+	}
+//getters and setters
+}

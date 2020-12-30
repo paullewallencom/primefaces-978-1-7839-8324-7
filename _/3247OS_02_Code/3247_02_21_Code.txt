@@ -1,0 +1,8 @@
+<p:inputText id="text" title="Enter some value"/>  
+<pe:tooltip for="text" value="Tooltips can be controlled through the widget functions"
+                            autoShow="true" widgetVar="tooltip"/>
+ <p:commandButton value="Hide" type="button" onclick="PF('tooltip').hide();"/>
+       <p:commandButton value="Show" type="button" onclick="PF('tooltip').show();"/>
+ <p:commandButton value="Reposition" type="button"
+	onclick="PF('tooltip').reposition();"/>            
+ <p:commandButton value="Destroy" type="button" onclick="PF('tooltip').destroy();">

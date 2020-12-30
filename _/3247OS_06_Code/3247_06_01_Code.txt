@@ -1,0 +1,11 @@
+<p:panel header="Export data  PDF and Excel ">
+     <p:commandLink id="pdf" ajax="false">
+         <p:graphicImage value="/resources/images/pdf.png"/>
+         <pe:exporter type="pdf" target="accountTable,accountDetailsTable"                       fileName="AccountsAndDetails" datasetPadding="5"/>
+     </p:commandLink>
+     <p:spacer width="30"/>
+     <p:commandLink id="xls" ajax="false">
+         <p:graphicImage value="/resources/images/excel.png"/>
+         <pe:exporter type="xlsx" target="accountTable,accountDetailsTable" 	               	   fileName="AccountsAndDetails" datasetPadding="5"/>
+     </p:commandLink>
+</p:panel>

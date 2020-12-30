@@ -1,0 +1,20 @@
+<p:dataTable id="dataTable" var="message" value="#{dataTableController.messages}" paginator="true"  
+ paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+ rows="5" rowsPerPageTemplate="5,10,15" paginatorPosition="bottom">  
+        <p:ajax event="page"  
+                onstart="PF('blockUIWidget').block()" oncomplete="PF('blockUIWidget').unblock()"/>  
+        <p:ajax event="sort" 
+                onstart="PF('blockUIWidget').block()" oncomplete="PF('blockUIWidget').unblock()"/>  
+        <p:column sortBy="subject" headerText="Subject">  
+            <h:outputText value="#{message.subject}"/>  
+        </p:column>  
+        <p:column sortBy="text" headerText="Text">  
+            <h:outputText value="#{message.text}"/>  
+        </p:column>  
+    </p:dataTable>
+<pe:blockUI target="dataTable" widgetVar="blockUIWidget">  
+    <h:panelGrid columns="2">  
+        <h:graphicImage library="images" name="ajax-loader.gif"  />  
+        <h:outputText value="Adding message..." />  
+    </h:panelGrid>  
+</pe:blockUI>

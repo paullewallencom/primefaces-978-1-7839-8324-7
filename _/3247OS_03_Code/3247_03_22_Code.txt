@@ -1,0 +1,8 @@
+<p:commandButton value="Block this page!" 
+  onstart="PF('blockUIWidget').block()" oncomplete="PF('blockUIWidget').unblock()"/>
+<pe:blockUI widgetVar="blockUIWidget">  
+    <h:panelGrid columns="2">  
+        <h:graphicImage library="images" name="ajax-loader.gif"/>  
+        <h:outputText value="Please wait..." />  
+    </h:panelGrid>  
+</pe:blockUI>

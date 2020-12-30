@@ -1,0 +1,13 @@
+<p:panel header="Export data to PDF and Excel">
+    <p:commandLink id="pdf" ajax="false">
+<p:graphicImage value="/resources/images/exporticons/pdf.png" />
+	  <f:setPropertyActionListener value="true" target="#{exporterController.customExporter}" />
+	   <pe:exporter type="pdf" target="posts" fileName="posts" />
+    </p:commandLink>
+    <p:spacer width="20" />
+    <p:commandLink id="xls" ajax="false">
+	<p:graphicImage value="/resources/images/exporticons/excel.png" />
+	  <f:setPropertyActionListener value="true" target="#{exporterController.customExporter}"/>
+	   <pe:exporter type="xlsx" target="posts" fileName="posts" />
+    </p:commandLink>
+</p:panel>

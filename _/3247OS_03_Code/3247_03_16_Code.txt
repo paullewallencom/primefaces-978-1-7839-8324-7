@@ -1,0 +1,25 @@
+<h:outputScript id="waypointScript" target="body">  
+/* <![CDATA[ */ 
+    $(document).ready(function() { 
+        $('body').append($("<div class='ui-widget ui-widget-header hiding' id='article-finished'>" + 
+            "Congrats! You have finished reading the articles.</div>")); 
+    }); 
+/* ]]> */  
+</h:outputScript> 
+<h:outputStylesheet id="waypointCSS">  
+.ad-unit.active {  
+        background: #faa7a7;  
+    }  
+      
+    #article-finished {  
+        position: fixed;  
+        z-index: 999;  
+        bottom: 20px;  
+        right: 20px;  
+        padding: 15px;  
+    }  
+      
+    #article-finished.hiding {  
+        right: -340px;  
+    }  
+}

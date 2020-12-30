@@ -1,0 +1,28 @@
+private LayoutOptions layoutOptions;  
+  
+ @PostConstruct  
+ protected void initialize() {   
+  layoutOptions = new LayoutOptions();  
+  //Options for all panes  
+  LayoutOptions panes = new LayoutOptions();  
+  panes.addOption("slidable", false);  
+  panes.addOption("resizeWhileDragging", true);  
+  layoutOptions.setPanesOptions(panes);  
+  
+  //Set options for west pane  
+  LayoutOptions left = new LayoutOptions();  
+  left.addOption("size", 150);  
+  left.addOption("minSize", 40);  
+  left.addOption("maxSize", 300);  
+  layoutOptions.setWestOptions(left);  
+  
+  //set options for center pane  
+  layoutOptionsTwo = new LayoutOptions();  
+  
+        // options for all panes  
+  LayoutOptions center= new LayoutOptions();  
+  center.addOption("size", 200);  
+  center.addOption("minSize", 50);  
+  center.addOption("maxSize", 250);  
+  layoutOptions.setWestOptions(center);  
+}

@@ -1,0 +1,27 @@
+<pe:timeline id="timeline" value="#{timelineController.model}" var="event"  
+             editable="true"   start="#{timelineController.start}"    end="#{timelineController.end}"  timeZone="#{timelineController.targetTZ}"  
+             browserTimeZone="#{timelineController.browserTZ}"  
+             dropActiveStyleClass="ui-state-highlight" dropHoverStyleClass="ui-state-hover">  
+    <p:ajax event="drop" listener="#{timelineController.onDrop}" global="false" update="eventsList"/>  
+    <h:panelGrid columns="1">  
+        <h:outputText value="#{event.name}"/>  
+        <h:outputText value="#{event.start}">  
+            <f:convertDateTime dateStyle="short" type="both" timeZone="#{timelineController.targetTZ}"/>  
+        </h:outputText>  
+        <h:outputText value="#{event.end}">  
+            <f:convertDateTime dateStyle="short" type="both" timeZone="#{timelineController.localTZ}"/>  
+        </h:outputText>  
+    </h:panelGrid>  
+</pe:timeline>              
+<h:panelGrid columns="2" >  
+    <h:outputText value="Choose your target time zone"/>  
+    <p:selectOneMenu value="#{timelineController.localTZ}">  
+        <f:selectItems value="#{timelineController.timeZones}"/>  
+        <p:ajax update="timeline" listener="#{timelineController.onSwitchTimeZone}"/>  
+    </p:selectOneMenu>  
+    <h:outputText value="Choose your browser's time zone"/>  
+    <p:selectOneMenu value="#{timelineController.browserTZ}">  
+        <f:selectItems value="#{timelineController.timeZones}"/>  
+        <p:ajax update="timeline" listener="#{timelineController.onSwitchTimeZone}"/>  
+    </p:selectOneMenu>  
+</h:panelGrid>

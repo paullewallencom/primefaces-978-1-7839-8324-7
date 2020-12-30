@@ -1,0 +1,12 @@
+<pe:fluidGrid value="#{employerController.companies}" var="company"  
+              fitWidth="true" hasImages="true">  
+ <p:ajax event="layoutComplete" update="@none"  
+            listener="#{employerController.fireLayoutComplete}"/>    
+  <pe:fluidGridItem> 
+      <h:graphicImage id="companyImage" value="/resources/images/employers/#{company.name}" > 
+       <pe:waypoint id="waypoint"   offset="'100%'">  
+         <pe:javascript event="reached" execute="handleWaypoint(ext);"/>  
+       </pe:waypoint> 
+      </h:graphicImage>
+  </pe:fluidGridItem>  
+</pe:fluidGrid>

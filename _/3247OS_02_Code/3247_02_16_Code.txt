@@ -1,0 +1,3 @@
+<pe:tooltip for="focus" showEvent="focus" hideEvent="blur" showEffect="fadeIn" 		hideEffect="fadeIn" myPosition="left center" atPosition="right center">
+	<p:graphicImage value="/resources/images/logo.png"/>
+</pe:tooltip>

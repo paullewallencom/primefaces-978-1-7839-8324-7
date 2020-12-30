@@ -1,0 +1,1 @@
+<pe:javascript event="eventname" execute="alert('JS function executed')"/>

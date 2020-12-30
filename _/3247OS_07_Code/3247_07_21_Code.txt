@@ -1,0 +1,3 @@
+.ui-icon-logo {
+    background-image: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgA ... ASUVORK5CYII=") !important;
+}

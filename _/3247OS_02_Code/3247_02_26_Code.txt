@@ -1,0 +1,19 @@
+<pe:remoteCommand id="applyDataCommand" name="applyData" update="subject date circle"  actionListener="#{remoteCommandController.parametersAssigned}">    
+    <pe:assignableParam name="subject" assignTo="#{remoteCommandController.subject}"/>  
+    <pe:assignableParam name="date" assignTo="#{remoteCommandController.date}">  
+        <f:convertDateTime type="both" dateStyle="short" locale="en"/>  
+    </pe:assignableParam>  
+    <pe:assignableParam name="circle" assignTo="#{remoteCommandController.circle}">  
+        <pe:convertJson />  
+    </pe:assignableParam>  
+</pe:remoteCommand> 
+<p:commandButton value="Apply Data" type="button" onclick="applyData('hello extension user', '14/1/14 02:30:11 PM', JSON.stringify(circle))" /> 
+//Javascript code  
+<script type="text/javascript">  
+    circle = {  
+        radius: 50,  
+        backgroundColor: "#FF0000",  
+        borderColor: "#DDDDDD",  
+        scaleFactor: 1.2  
+    };  
+</script>

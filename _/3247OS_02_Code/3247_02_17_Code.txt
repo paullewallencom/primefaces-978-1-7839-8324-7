@@ -1,0 +1,1 @@
+<pe:tooltip for="mousearea" value="Tooltip position depends on current mouse position"  		mouseTracking="true" adjustX="10" adjustY="10"/>  

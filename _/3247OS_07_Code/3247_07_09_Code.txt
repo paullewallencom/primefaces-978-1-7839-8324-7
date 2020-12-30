@@ -1,0 +1,16 @@
+<pe:switch id="switch" value="#{switchController.input}">  
+    <pe:defaultCase>  
+       Default: Icecreams  
+    </pe:defaultCase>    
+    <pe:case value="case1">  
+        Menu1: <p:commandButton id="icecreams" ajax="false" 
+                value="Go to icecreams option" />   
+    </pe:case>   
+    <pe:case value="case2">  
+        Menu2: <p:commandButton id="juice" 
+                value="Go to juice option"  />  
+    </pe:case>  
+    <pe:case value="#{null}">  
+        No option selected  
+    </pe:case>  
+</pe:switch>

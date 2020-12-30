@@ -1,0 +1,11 @@
+$(function() {
+ PrimeFacesExt.locales.TimePicker['fr'] = {
+    hourText: 'Heures',
+    minuteText: 'Minutes',
+    amPmText: ['AM', 'PM'],
+    closeButtonText: 'Fermer',
+    nowButtonText: 'Maintenant',
+    deselectButtonText: 'Désélectionner'
+};
+
+}

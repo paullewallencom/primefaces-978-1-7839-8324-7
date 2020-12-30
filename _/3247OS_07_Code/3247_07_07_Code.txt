@@ -1,0 +1,7 @@
+<pe:importEnum type="javax.faces.application.ProjectStage" var="JsfProjectStages" allSuffix="ALL_ENUM" />
+Current stage:
+Development: #{JsfProjectStages.Development}
+All stages: 
+<ui:repeat var="current" value="#{JsfProjectStages.ALL_ENUM}">
+	<h:outputText value="#{current}" />
+</ui:repeat> 

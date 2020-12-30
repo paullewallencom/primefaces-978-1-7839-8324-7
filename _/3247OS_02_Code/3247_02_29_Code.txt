@@ -1,0 +1,10 @@
+<pe:dynaForm id="dynaForm" value="#{dynaFormController.model}" var="data">
+        <pe:dynaFormControl type="input" for="text">
+            <p:inputText id="text" value="#{data.value}" required="#{data.required}"/>
+        </pe:dynaFormControl>
+        <pe:dynaFormControl type="select" for="select" styleClass="select">
+            <p:selectOneMenu id="select" value="#{data.value}" required="#{data.required}">
+                <f:selectItems value="#{dynaFormController.languages}"/>
+            </p:selectOneMenu>
+        </pe:dynaFormControl>
+</pe:dynaform>

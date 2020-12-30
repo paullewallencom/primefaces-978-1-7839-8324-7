@@ -1,0 +1,9 @@
+private List<FluidGridItem> images;  
+@PostConstruct  
+protected void initialize() {  
+   images = new ArrayList<FluidGridItem>();  
+        for (int i = 0; i < 3; i++) {  
+                images.add(new FluidGridItem(new Image(i + ".png")));  
+            }  
+        }  
+} 

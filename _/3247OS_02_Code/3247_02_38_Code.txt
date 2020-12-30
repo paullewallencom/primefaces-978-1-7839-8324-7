@@ -1,0 +1,11 @@
+public void clearInputs(int index) {  
+        FacesContext fc = FacesContext.getCurrentInstance();  
+        DynaForm dynaForm = (DynaForm) fc.getViewRoot().findComponent(":mainForm:dynaForm");    
+        // Ids of components to be visited    
+        String[] ids = new String[] {"tableColumn", "inputValue", "inputOffset", 			"valueOperator"};  
+        VisitTaskExecutor visitTaskExecutor =  
+            new ClearInputsExecutor(fc.getELContext(), RequestContext.getCurrentInstance(), ids, 		index);  
+        // clear inputs in the visit callback  
+        ExecutableVisitCallback visitCallback = new ExecutableVisitCallback(visitTaskExecutor);  
+        dynaForm.visitTree(VisitContext.createVisitContext(fc, null, VISIT_HINTS), 		visitCallback);  
+}

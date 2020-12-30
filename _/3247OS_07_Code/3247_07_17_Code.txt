@@ -1,0 +1,16 @@
+<!-- Custom CSS styles -->  
+<style type="text/css">  
+    /*Blue background for mask*/  
+    #ajaxErrorHandlerDialog\:modal {  
+        background: darkblue;  
+    }  
+    /*button colors*/  
+    #ajaxErrorHandlerDialog button * {  
+        color: red;  
+        background:none;  
+    }  
+    #ajaxErrorHandlerDialog button {  
+        border-width: 5px;  
+        background: lightred;  
+    }    
+</style>

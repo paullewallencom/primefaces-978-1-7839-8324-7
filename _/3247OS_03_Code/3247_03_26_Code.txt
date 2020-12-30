@@ -1,0 +1,7 @@
+<pe:spotlight blocked="true" widgetVar="secondSpotlight" 
+   //Content goes here
+    <p:commandButton type="button" value="JS Block" icon="ui-icon-locked" 
+                     onclick="PF('secondSpotlight').block()"/>  
+    <p:commandButton type="button" value="JS Unblock" icon="ui-icon-unlocked" 
+                     onclick="PF('secondSpotlight').unblock()"/>  
+</pe:spotlight>

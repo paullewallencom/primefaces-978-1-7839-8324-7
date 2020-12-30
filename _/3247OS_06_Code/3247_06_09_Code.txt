@@ -1,0 +1,13 @@
+<h:graphicImage id="galleryimage" value="/resources/images/galleryimage.png" />
+<pe:imageRotateAndResize id="rotateAndResize" for="galleryimage" widgetVar="rotateAndResizeWidget">
+    <p:ajax event="rotate" listener="#{imageRotateAndResizeController.rotateListener}"/>
+    <pe:javascript event="resize" execute="alert('resize event fired')"/>
+</pe:imageRotateAndResize>
+<p:commandButton icon="ui-icon-arrowreturnthick-1-w" value="Rotate Left"
+                 onclick="PF('rotateAndResizeWidget').rotateLeft(90);return false;"/>
+<p:commandButton icon="ui-icon-arrowreturnthick-1-e" value="Rotate Right"
+                 onclick="PF('rotateAndResizeWidget').rotateRight(180);return false;"/>
+<p:commandButton icon="ui-icon-zoomin" value="Scale +"
+                 onclick="PF('rotateAndResizeWidget').scale(1.5);return false;"/>
+<p:commandButton icon="ui-icon-zoomout" value="Scale -"
+                 onclick="PF('rotateAndResizeWidget').scale(0.5);return false;"/>

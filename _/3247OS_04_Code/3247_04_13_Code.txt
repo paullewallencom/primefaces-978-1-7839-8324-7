@@ -1,0 +1,13 @@
+private List<FluidGridItem> items;
+@PostConstruct
+protected void initialize() {
+  items = new ArrayList<FluidGridItem>();
+  List<SelectItem> selectItems = new ArrayList<SelectItem>();
+  selectItems.add(new SelectItem("1", "Label 1"));
+  selectItems.add(new SelectItem("2", "Label 2"));
+  selectItems.add(new SelectItem("3", "Label 3"));
+  items.add(new FluidGridItem(new DynamicField("First Label", null, true, null), "input"));		
+  items.add(new FluidGridItem(new DynamicField("Second Label", null, false, selectItems),   "select"));
+  items.add(new FluidGridItem(new DynamicField("Fourth Label", "2", false, selectItems),   "select"));
+  items.add(new FluidGridItem(new DynamicField("Fifth Label", null, true, null), "calendar"));		
+}

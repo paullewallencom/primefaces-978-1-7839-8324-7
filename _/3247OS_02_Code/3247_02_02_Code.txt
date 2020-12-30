@@ -1,0 +1,3 @@
+<pe:inputNumber id="validinput" value="#{inputNumberController.value}" symbol="$ 		"converter="inputNumberConverter"   validatorMessage="The value must be  les s than 			100.00 " emptyValue="zero"  >  
+ 	<f:validateDoubleRange maximum="100"/>  
+</pe:inputNumber>

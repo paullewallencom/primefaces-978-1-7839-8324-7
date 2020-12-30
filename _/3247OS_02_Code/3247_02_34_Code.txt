@@ -1,0 +1,6 @@
+<pe:dynaForm id="dynaForm" value="#{dynaFormController.model}"  
+                 var="data" varContainerId="ccId">  
+        <pe:dynaFormControl for="text">  
+                <p:inputText id="txt" value="#{data.value}"/> 
+        </pe:dynaFormControl>
+</pe:dynaForm>

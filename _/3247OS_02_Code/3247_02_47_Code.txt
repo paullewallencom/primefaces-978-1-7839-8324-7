@@ -1,0 +1,7 @@
+public void changeMode() {  
+        if (mode.equals("css")) {  
+            mode = "javascript";  
+        } else {  
+            mode = "css";  
+        }  
+ }  

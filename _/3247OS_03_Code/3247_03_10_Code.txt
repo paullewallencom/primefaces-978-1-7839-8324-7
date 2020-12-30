@@ -1,0 +1,13 @@
+<h:outputScript id="waypointScript" target="body">
+/* <![CDATA[ */
+    function handleWaypoint(ext) {
+        img.css('opacity', 0);
+        img.attr('src', img.attr('data-src'));
+        img.load(function(){
+            img.animate({ opacity: 1 }, 500);
+            img.removeAttr('data-src');
+            img.waypoint('destroy');
+        });
+    }
+/* ]]> */
+</h:outputScript>

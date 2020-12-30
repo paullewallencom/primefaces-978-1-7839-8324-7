@@ -1,0 +1,4 @@
+<pe:waypoint id="waypoint1" offset="'-100%'">
+	<pe:javascript event="reached"
+	execute="$('.ui-button').toggleClass('hidden');" />
+</pe:waypoint>

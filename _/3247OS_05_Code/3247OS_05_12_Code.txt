@@ -1,0 +1,39 @@
+<pe:timeline id="timelineFirst" value="#{timelineController.firstModel}" var="task"
+              widgetVar="timelineFirstWdgt">
+    <pe:javascript event="rangechange" execute="onrangechangeFirst()"/>
+    <p:ajax event="select" listener="#{linkedTimelinesController.onSelect}"/>  
+    <h:panelGroup layout="block">
+        <h:outputText value="#{task.title}"/>
+    </h:panelGroup>
+    <p:graphicImage library="images" name="#{task.imagePath}"/>
+</pe:timeline>
+<pe:timeline id="timelineSecond" value="#{linkedTimelinesController.secondModel}"
+             widgetVar="timelineSecondWdgt">
+    <pe:javascript event="rangechange" execute="onrangechangeSecond()"/>
+</pe:timeline>
+// Select the events
+ public void onSelect(TimelineSelectEvent e) {  
+    TimelineUpdater timelineUpdater = TimelineUpdater.getCurrentInstance("timelineSecond");       
+        if (aSelected) {   
+               timelineUpdater.select(1);  
+        } else {    
+               timelineUpdater.select(0);  
+        }     
+        aSelected = !aSelected;            
+}
+// Javascript calls for rangechange events
+<h:outputScript id="timelineJS" target="body">
+/* <![CDATA[ */    
+$(function() {
+    onrangechangefirst();
+});  
+function onrangechange1() {
+    var range = PF('timelineFirstWdgt').getVisibleRange();
+    PF('timelineSecondWdgt').setVisibleRange(range.start, range.end);
+}
+function onrangechange2() {
+    var range = PF('timelineSecondWdgt').getVisibleRange();
+    PF('timelineFirstWdgt').setVisibleRange(range.start, range.end);
+}
+/* ]]> */
+</h:outputScript>

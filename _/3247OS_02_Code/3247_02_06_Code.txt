@@ -1,0 +1,2 @@
+<h:inputText id="number" value="#{keyFilterController.value}"/>
+      <pe:keyFilter for="number" mask="num"/>

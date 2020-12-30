@@ -1,0 +1,7 @@
+public void onAdd(TimelineAddEvent e) {  
+  event = new TimelineEvent(e.getData(), e.getStartDate(), e.getEndDate(), true, e.getGroup());  
+ }  
+public void saveDetails() {   
+        TimelineUpdater timelineUpdater = TimelineUpdater.getCurrentInstance(":timeline");  
+        model.update(event, timelineUpdater);    
+    }

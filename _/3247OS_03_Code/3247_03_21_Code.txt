@@ -1,0 +1,6 @@
+<pe:blockUI source="accessRights" target="@(.blockable)" autoShow="true" event="sort,page">  
+      <h:panelGrid columns="2">  
+            <h:graphicImage library="images" name="ajax-loader.gif" />  
+            <h:outputText value="Checkbox clicked..." />  
+      </h:panelGrid>  
+</pe:blockUI>

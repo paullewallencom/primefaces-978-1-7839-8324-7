@@ -1,0 +1,31 @@
+public class JobDetailsController implements Serializable {
+   private static final long serialVersionUID = 20111120L;
+   private List<JobPost> jobPosts;
+   private int currentLevel = 1;
+    public JobDetailsController() {
+	jobPosts = new ArrayList<JobPost>();
+	loadJobPosts();
+	 }
+public void loadJobPosts(){
+
+   // SrArchitect
+   List<JobDetails> JobDetailsArchList = new ArrayList<JobDetails>();
+   JobDetails jobDetails = new JobDetails("Java Domain","10","B11-Architect", getSkillsDetails("Java"));
+   JobDetailsArchList.add(jobDetails);
+   jobDetails = new JobDetails(".NET Domain","8","B12-Architect", getSkillsDetails(".NET"));
+   JobDetailsArchList.add(jobDetails);
+   jobDetails = new JobDetails("DB Domain","12","A14-Architect",  getSkillsDetails("DB"));
+   JobDetailsArchList.add(jobDetails);
+   jobDetails = new JobDetails("SAP Domain", "14", "B13-Architect",  getSkillsDetails("SAP"));
+   JobDetailsArchList.add(jobDetails);
+   jobPosts.add(new JobPost("SrArchitect","Architectural designs","US",false, JobDetailsArchList));
+   //Other positions goes here
+}
+private List<SkillsDetails> getSkillsDetails(String title) {
+    List<SkillsDetails> skillDetails = new ArrayList<SkillsDetails>();
+    if(title.equalsIgnoreCase("JAVA")){
+   skillDetails.add(new SkillsDetails("JSF","10","OCJP","Advanced"));
+   skillDetails.add(new SkillsDetails("Spring","8","not required","Excellant"));
+   skillDetails.add(new SkillsDetails("Struts","12","Any","Advanced"));
+   //Other skills goes here
+}

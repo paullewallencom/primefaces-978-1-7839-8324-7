@@ -1,0 +1,19 @@
+<pe:remoteCommand id="applyDataCommand" name="applyData" actionListener="#     {remoteCommandController.printMethodParams}">  
+    <pe:methodSignature parameters="java.lang.String, java.util.Date,            org.primefaces.extensions.projectname.model.Circle" />  
+    <pe:methodParam name="subject"/>  
+    <pe:methodParam name="date">  
+        <f:convertDateTime type="both" dateStyle="short" locale="en"/>  
+    </pe:methodParam>  
+    <pe:methodParam name="circle">  
+        <pe:convertJson />  
+    </pe:methodParam>  
+</pe:remoteCommand>  
+//Javascript code  
+<script type="text/javascript">  
+    circle = {  
+        radius: 30,  
+        backgroundColor: "#00FF00",  
+        borderColor: "#EE00DD",  
+        scaleFactor: 1.9
+    };  
+</script>

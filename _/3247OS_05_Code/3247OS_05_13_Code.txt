@@ -1,0 +1,25 @@
+<pe:timeline id="timeline" value="#{timelineController.model}"
+             preloadFactor="#{timelineController.preloadFactor}"
+             zoomMax="#{timelineController.zoomMax}" showNavigation="true">
+    <p:ajax event="lazyload" update="@none" listener="#{timelineController.onLazyLoad}"/>
+</pe:timeline>
+<h:panelGrid columns="2" style="margin-top:15px">
+    <p:spinner id="spinner" value="#{lazyTimelineController.preloadFactor}"
+               min="0" max="1" stepFactor="0.05"/>
+    <p:commandButton value="Update Preload Factor" process="@this spinner" update="timeline" action="#{timelineController.clearTimeline}"/>
+</h:panelGrid>
+//generate lazy load events
+public void onLazyLoad(TimelineLazyLoadEvent e) {  
+       TimelineUpdater timelineUpdater = TimelineUpdater.getCurrentInstance(":form:timeline");  
+        Date startDate = e.getStartDateFirst(); 
+        Date endDate = e.getEndDateFirst();
+        // moving-fetch events for the first time range  
+        generateRandomEvents(startDate, endDate, timelineUpdater); 
+        // zooming out-fetch events for the second time range    
+        if (e.hasTwoRanges()) {  
+            generateRandomEvents(e.getStartDateSecond(), e.getEndDateSecond(), timelineUpdater);  
+        }  
+    }  
+public void clearTimeline() {  
+        model.clear();  
+    }

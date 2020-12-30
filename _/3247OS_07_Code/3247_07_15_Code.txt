@@ -1,0 +1,6 @@
+<p:commandButton action="#{ajaxErrorHandlerController.actionFiredException}"  
+                 value="Custom handler" />
+public String actionFiredException() {  
+        Throwable t = new IllegalStateException("This is an illegal state exception!");  
+        throw new FacesException(t);  
+    }

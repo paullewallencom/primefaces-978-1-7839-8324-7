@@ -1,0 +1,12 @@
+<h:outputText value="Preferred Interview Timings-Start: " />
+<pe:timePicker value="#{employeeRegistration.jobseeker.interviewFromTime}"
+	timeSeparator="-" startHours="9" endHours="12" startMinutes="5"
+	endMinutes="55" intervalMinutes="5" showCloseButton="true"
+	showDeselectButton="true" showNowButton="true" rows="2" 
+       showPeriod="true" style="width:70px;" widgetVar="customTimeWidget" label="Custom time 	picker" />
+<h:outputText value="End:" />
+<pe:timePicker value="#{employeeRegistration.jobseeker.interviewToTime}"
+	timeSeparator="-" startHours="13" endHours="16" startMinutes="5"
+	endMinutes="55" intervalMinutes="5" showCloseButton="true"
+	showDeselectButton="true" showNowButton="true" rows="2"
+	showPeriod="true" style="width:70px;" label="Custom time picker" />

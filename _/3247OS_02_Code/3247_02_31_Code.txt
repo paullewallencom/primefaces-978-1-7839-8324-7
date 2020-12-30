@@ -1,0 +1,25 @@
+<pe:dynaForm id="dynaForm" value="#{dynaFormController.model}" var="data"
+ autoSubmit="true" buttonBarPosition="both" widgetVar="dynaFormWidget">
+        <pe:dynaFormControl styleClass="pe-dynaform-label">
+            <h:outputText value="#{data}"/>
+        </pe:dynaFormControl>
+  <f:facet name="headerRegular">
+            <div><h:outputText value="This is a regular header area"/></div>
+        </f:facet>
+        <f:facet name="footerRegular">
+            <div><h:outputText value="This is a regular footer area"/></div>
+        </f:facet>
+        <f:facet name="headerExtended">
+            <div><h:outputText value="This is an extended header area"/></div>
+        </f:facet>
+        <f:facet name="footerExtended">
+            <div><h:outputText value="This is an extended footer area"/></div>
+        </f:facet>        
+        <f:facet name="buttonBar">
+	<p:commandButton value="Search" action="#{dynaFormController.submitForm}"
+  	process="dynaForm" update=":mainForm:dynaFormGroup :mainForm:inputValues"
+                             oncomplete="handleComplete(xhr, status, args)"/>
+            <p:commandButton type="reset" value="Reset" style="margin-left: 5px;"/>
+            <p:commandButton type="button" value="Show / hide advanced search" style="margin-		left: 5px;" onclick="PF('dynaFormWidget').toggleExtended()"/>
+    </f:facet>
+</pe:dynaForm>

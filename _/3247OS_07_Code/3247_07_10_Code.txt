@@ -1,0 +1,3 @@
+<pe:waypoint id="waypoint" offset="'100%'">
+	<pe:javascript event="reached" execute="handleWaypoint(ext);" />
+</pe:waypoint>

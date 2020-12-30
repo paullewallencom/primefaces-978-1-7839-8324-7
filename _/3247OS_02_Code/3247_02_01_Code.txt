@@ -1,0 +1,1 @@
+<pe:inputNumber id="customInput" value="#{inputNumberController.value}" symbol=" $" symbolPosition="p"  decimalSeparator="," thousandSeparator="." minValue="-99.99" maxValue="99.99" decimalPlaces="4" >                 

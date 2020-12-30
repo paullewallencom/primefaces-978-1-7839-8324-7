@@ -1,0 +1,6 @@
+<pe:timeline id="timeline" value="#{timelineController.model}"
+     selectable="false" zoomable="false" moveable="false"  
+     stackEvents="false" axisOnTop="true" eventStyle="dot"  
+     showCurrentTime="false" showNavigation="true">  
+    <p:ajax event="select" listener="#{timelineController.onSelectListener}"/>  
+</pe:timeline>  

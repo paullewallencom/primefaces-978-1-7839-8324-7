@@ -1,0 +1,3 @@
+<pe:ckEditor id="editor" value="#{ckeditorController.content}" interfaceColor="#{ckeditorController.color}" checkDirtyInterval="0">  
+    <p:ajax event="save" listener="#{ckeditorController.saveListener}" update="growl"/>  
+</pe:ckEditor>

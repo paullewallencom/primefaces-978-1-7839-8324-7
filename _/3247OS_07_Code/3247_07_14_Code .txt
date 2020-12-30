@@ -1,0 +1,22 @@
+<pe:ajaxErrorHandler type="java.lang.IllegalStateException" button="Reload the page!!">  
+    <f:facet name="title">  
+        Error <span style="color: red;">{error-name}</span>  
+    </f:facet>  
+    <f:facet name="body">   
+         <h:form>  
+             <p:tabView >  
+                <p:tab title="Message">  
+                   <h:panelGrid columns="2">  
+                      <h:outputLabel value="Error message:" />  
+                      <h:outputText value="{error-message}" />  
+                      <h:outputLabel value="Server name:" />  
+                      <h:outputText value="{error-hostname}"/>  
+                   </h:panelGrid>  
+                 </p:tab>  
+                 <p:tab title="Detail">    
+                            {error-stacktrace}   
+                 </p:tab>  
+              </p:tabView>  
+            </h:form>  
+    </f:facet>  
+</pe:ajaxErrorHandler>

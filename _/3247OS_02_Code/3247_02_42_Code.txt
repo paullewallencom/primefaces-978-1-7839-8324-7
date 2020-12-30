@@ -1,0 +1,3 @@
+<pe:ckEditor id="editor" value="#{ckeditorController.content}" toolbar="[['Cut','Copy','Paste','PasteText','PasteFromWord']]">  
+  <p:ajax event="save" listener="#{ckeditorController.saveListener}" update="growl"/>  
+</pe:ckEditor>

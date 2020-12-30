@@ -1,0 +1,27 @@
+<pe:layout resizerTip="Resize Me" togglerTipClosed="Open Me" togglerTipOpen="Close Me">
+        <pe:layoutPane position="north" size="60" >
+		<f:facet name="header">
+                    <h:outputText value="North"/>
+                </f:facet>
+        </pe:layoutPane>
+        <pe:layoutPane position="center">
+            <pe:layoutPane position="north" size="40%" minHeight="60">
+                Center-North   
+            </pe:layoutPane>
+            <pe:layoutPane position="center" >
+                Center-center
+            </pe:layoutPane>
+ 	    <pe:layoutPane position="south" size="40%" initClosed="true">
+                Center-South
+            </pe:layoutPane>
+        </pe:layoutPane>
+        <pe:layoutPane position="west" size="300" resizeWhileDragging="true">
+            West
+        </pe:layoutPane>
+        <pe:layoutPane position="east" size="300" >
+            East
+        </pe:layoutPane>
+        <pe:layoutPane position="south" size="60" closable="false">
+            South
+        </pe:layoutPane>
+</pe:layout>

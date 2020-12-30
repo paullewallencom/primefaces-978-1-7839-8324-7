@@ -1,0 +1,5 @@
+<pe:fluidGrid hGutter="10" vGutter="10">  
+    <pe:fluidGridItem styleClass="ui-widget-header">Item 1</pe:fluidGridItem>  
+    <pe:fluidGridItem styleClass="ui-widget-header w2 h2">Item 2</pe:fluidGridItem>  
+    <pe:fluidGridItem styleClass="ui-widget-header h3">Item 3</pe:fluidGridItem>
+</pe:fluidGrid>

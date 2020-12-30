@@ -1,0 +1,7 @@
+class DynamicField implements Serializable {  
+    private String label;  
+    private Object value;  
+    private boolean required;  
+    private List<SelectItem> selectItems;
+  //getter,setters and constructors
+}

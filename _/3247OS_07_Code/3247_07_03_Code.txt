@@ -1,0 +1,20 @@
+<!-- f:metadata on this page -->
+<f:metadata> 
+    <f:viewParam name="d" value="#{jsonController.d}">
+        <pe:convertJson type="java.util.Date"/>
+    </f:viewParam>
+    <f:viewParam name="list" value="#{jsonController.list}">
+        <pe:convertJson type="#{jsonController.typeGenericList}"/>
+    </f:viewParam>
+</f:metadata>
+<p:inputText id="inputUrl" value="#{jsonController.generatedUrl}"/>   
+<p:commandButton value="Open Link" type="button"
+                 onclick="openLinkPopup()"/>
+<h:outputScript id="jsonConverterJS" target="body">
+    function openLinkInPopup() {
+        var inputValue = $('#inputUrl').val();    
+        if (inputValue !== null) {
+            window.open(inputValue, 'JsonConverter with URL parameters',                'width=auto,height=auto,resizable=yes,scrollbars=yes');
+        }
+    }       
+</h:outputScript>

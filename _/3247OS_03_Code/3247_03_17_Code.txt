@@ -1,0 +1,10 @@
+<pe:waypoint id="waypoint1" offset="'100%'">
+	<pe:javascript event="reached" execute="handleWaypoint(ext);" />
+</pe:waypoint>
+<p:commandButton id="topLink" type="button" value="TOP"
+     icon="ui-icon-triangle-1-n" styleClass="top hidden" title="Back to top"
+     onclick="$('html, body').animate({scrollTop: 0}, 'fast');" />
+<pe:waypoint id="waypoint2" offset="'-100%'">
+	<pe:javascript event="reached"
+	   execute="$('.ui-button').toggleClass('hidden');" />
+</pe:waypoint>

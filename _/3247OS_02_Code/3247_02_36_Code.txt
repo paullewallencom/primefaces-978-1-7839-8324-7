@@ -1,0 +1,13 @@
+<pe:dynaForm id="dynaForm" value="#{dynaFormController.model}" var="condition"> 
+<pe:dynaFormControl type="operator">
+ <p:selectOneMenu id="valueOperator" value="#{condition.valueOperator}">  
+            <f:selectItem itemValue="eq" itemLabel="equal"/>  
+            <f:selectItem itemValue="not" itemLabel="not equal"/>  
+            <f:attribute name="rcIndex" value="#{condition.index}"/>  
+ </pe:dynaFormControl>
+ <pe:dynaFormControl type="clear" styleClass="clearLink">  
+        <p:commandLink value="Clear inputs" process="@this"  
+                       action="#{dynaFormController.clearInputs(condition.index)}"  
+                       global="false"/>  
+  </pe:dynaFormControl>  
+</pe:dynaForm>

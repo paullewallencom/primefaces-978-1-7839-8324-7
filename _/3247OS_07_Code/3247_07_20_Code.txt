@@ -1,0 +1,3 @@
+.ui-icon-logo {
+    background-image: url("#{resource['images/logo.gif']}") !important;
+}

@@ -1,0 +1,4 @@
+<factory>
+  <exception-handler-factory>    <org.primefaces.extensions.component.ajaxerrorhandler.AjaxExceptionHandlerFactory
+  </exception-handler-factory>
+</factory>

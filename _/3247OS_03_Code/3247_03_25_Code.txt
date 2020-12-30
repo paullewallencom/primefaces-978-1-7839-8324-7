@@ -1,0 +1,3 @@
+<pe:spotlight id="idPanel" blocked="${spotlightController.editable}" >
+	//code related to the web page 
+</pe:spotlight>  

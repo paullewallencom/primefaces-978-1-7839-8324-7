@@ -1,0 +1,16 @@
+<plugin>
+    <groupId>org.primefaces.extensions</groupId>
+    <artifactId>resources-optimizer-maven-plugin</artifactId>
+    <version>1.0.0</version>
+     <executions>
+       <execution>
+         <id>optimize</id>
+         <goals>
+           <goal>optimize</goal>
+         </goals>
+       </execution>
+     </executions>
+    <configuration>
+     <inputDir>${project.build.directory}/your_resource_directory</inputDir>
+    </configuration>
+</plugin>  

@@ -1,0 +1,3 @@
+<p:inputText title="Enter User Name"/>   
+<p:password title="Enter Password"/>
+<pe:tooltip global="true"/>

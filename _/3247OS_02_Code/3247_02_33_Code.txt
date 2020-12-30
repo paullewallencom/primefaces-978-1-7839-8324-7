@@ -1,0 +1,31 @@
+private DynaFormModel modelOne;  
+ private DynaFormModel modelTwo; 
+ private boolean showModelOne = true;    
+
+ public DynaFormModel getModel() {  
+        return (showModelOne ? getModelOne() : getModelTwo());  
+    }    
+ public DynaFormModel getModelOne() {  
+        if (modelOne != null) {  
+            return modelOne;  
+        }   
+        modelOne = new DynaFormModel();  
+        DynaFormRow row = modelOne.createRegularRow();   
+        DynaFormLabel label11 = row.addLabel("Short Name", 1, 1);  
+        DynaFormLabel label12 = row.addLabel("Street", 2, 1);  
+ 
+        row = modelOne.createRegularRow();    
+        DynaFormControl control21 = row.addControl(new FormField(true), "name", 1, 1);  
+        DynaFormControl control22 = row.addControl(new FormField(false), "address", 2, 1);  
+        label11.setForControl(control21);   
+}
+
+ public DynaFormModel getModelTwo() {  
+        if (modelTwo != null) {  
+            return modelTwo;  
+        }  
+        modelTwo = new DynaFormModel();   
+        DynaFormRow row = modelTwo.createRegularRow();  
+  
+        row.addControl("Audio Volume", "separator", 3, 1);
+}

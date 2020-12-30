@@ -1,0 +1,26 @@
+<p:panel header="Personal Details">
+  <h:messages errorClass="error" />
+  <h:panelGrid columns="2" columnClasses="label, value">
+	<h:outputText value="Firstname: *" />
+	<p:inputText id="firstname" required="true" label="Firstname"
+	title="Please enter firstname" value="#{employeeRegistration.jobseeker.firstname}" />
+	<h:outputText value="Lastname: *" />
+	<p:inputText id="lastname" required="true" label="Lastname"
+	 title="Please enter firstname" value="#{employeeRegistration.jobseeker.lastname}" />
+	<h:outputText value="Age: * " title="Please enter Age" />
+	<p:inputText id="age" required="true" label="Age"
+	value="#{employeeRegistration.jobseeker.age}" />
+	<h:outputText value="Sex: " title="Please enter Sex" />
+	<p:inputText id="sex" value="#{employeeRegistration.jobseeker.sex}" />
+	<h:outputText value="MaritalStatus: " title="Please enter MaritalStatus" />
+	<p:inputText id="status" value="#{employeeRegistration.jobseeker.maritalStatus}" />
+	<h:outputText value="Skip to last: " />
+	<h:selectBooleanCheckbox value="#{employeeRegistration.skip}" />
+  </h:panelGrid>
+	<pe:keyFilter for="firstname" mask="alphanum" />
+	<pe:keyFilter for="lastname" regEx="/[a-z0-9_]/i" />
+	<pe:keyFilter for="age" mask="num" />
+	<pe:keyFilter for="sex" mask="alpha" />
+	<pe:keyFilter for="status" mask="alpha" />
+</p:panel>
+

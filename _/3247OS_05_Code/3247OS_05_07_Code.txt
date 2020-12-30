@@ -1,0 +1,22 @@
+<pe:timeline id="timeline" widgetVar="timelineWdgt" value="#{timelineController.model}"
+     editable="true" showButtonNew="true" timeZone="#{timelineController.timeZone}">
+    <pe:javascript event="add" execute="PF('timelineWdgt').addItem();"/>
+    <pe:javascript event="delete" execute="PF('timelineWdgt').cancelDelete();"/>
+</pe:timeline>
+<p:commandButton value="Submit" type="button" 
+                 onclick="updateData(PF('timelineWdgt').getData())"/>
+<p:commandButton value="Show updated timeline model" process="@none" update="timeline"
+                 title="Check if the model has been updated"/>            
+<pe:remoteCommand id="updateDataRemote" name="updateData" process="@this"
+                  actionListener="#{timelineController.updateData}">
+    <pe:methodSignature parameters="java.util.List"/>
+    <pe:methodParam name="events">
+        <pe:convertTimelineEvents/>
+    </pe:methodParam>
+</pe:remoteCommand>           
+<p:confirmDialog message="Are you sure you want to delete the selected event?"
+                 header="Delete confirmation" appendTo="@(body)"
+                 severity="alert" widgetVar="confirmWdgt">            
+    <p:commandButton value="Delete" type="button" onclick="PF('confirmWdgt').hide();PF('timelineWdgt').deleteItem();"/>
+    <p:commandButton value="Cancel" type="button" onclick="PF('confirmWdgt').hide()"/>
+</p:confirmDialog>

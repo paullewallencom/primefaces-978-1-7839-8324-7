@@ -1,0 +1,10 @@
+                 <h:panelGrid columns="6" style="margin-left:80px;">
+                <p:commandButton value="Toggle South" type="button"
+                                 onclick="PF('fpLayoutWidget').close('south')"/>
+                <p:commandButton value="Toggle West-North" type="button"
+                                 onclick="PF('fpLayoutWidget').open('south')"/>
+                <p:commandButton value="Close Center-North" type="button"
+                                 onclick="PF('fpLayoutWidget').toggle('east_south')"/>
+                <p:commandButton value="Size East Pane" type="button"
+                                 onclick="PF('fpLayoutWidget').sizePane('west', 350)"/>
+            </h:panelGrid>

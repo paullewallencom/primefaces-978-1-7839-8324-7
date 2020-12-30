@@ -1,0 +1,8 @@
+<pe:fluidGrid value="#{fluidGridController.images}" var="image"
+              fitWidth="true" hasImages="true">
+    <p:ajax event="layoutComplete" update="@none"
+            listener="#{fluidGridController.fireLayoutComplete}"/>    
+    <pe:fluidGridItem>
+        <h:graphicImage library="images" name="fluidgrid/#{image.name}"/>
+    </pe:fluidGridItem>
+</pe:fluidGrid>

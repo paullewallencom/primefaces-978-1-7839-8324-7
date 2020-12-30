@@ -1,0 +1,60 @@
+<h:panelGrid columns="5">
+    <h:outputText value="Start time"/>
+    <pe:timePicker value="#{timePickerController.time1}" mode="popup" 	onHourShow="startOnHourShowCallback" onMinuteShow="startOnMinuteShowCallback" 	widgetVar="startTimeWidget"/>
+    <h:outputText value="End time"/>
+    <pe:timePicker value="#{timePickerController.time2}" mode="popup" 	onHourShow="endOnHourShowCallback"
+        onMinuteShow="endOnMinuteShowCallback" widgetVar="endTimeWidget"/>
+</h:panelGrid>
+<h:outputScript id="timeRangeScript" target="body">  
+/* <![CDATA[ */  
+function startOnHourShowCallback(hour) {  
+        if (!PrimeFaces.widgets['endTimeWidget']) {  
+            return false;  
+        }      
+        var endHour = parseInt(PF('endTimeWidget').getHours());    
+        if (parseInt(hour) <= endHour) {  
+            return true;  
+        }    
+        return false;  
+    }    
+    function startOnMinuteShowCallback(hour, minute) {  
+        if (!PrimeFaces.widgets['endTimeWidget']) {  
+            return false;  
+        }       
+        var endHour = parseInt(PF('endTimeWidget').getHours());  
+        var endMinute = parseInt(PF('endTimeWidget').getMinutes());   
+        if (parseInt(hour) < endHour) {  
+            return true;  
+        }    
+        if ((parseInt(hour) == endHour) && (parseInt(minute) < endMinute)) {  
+            return true;  
+        }  
+        return false;  
+    }  
+    function endOnHourShowCallback(hour) {  
+        if (!PrimeFaces.widgets['startTimeWidget']) {  
+            return false;  
+        }       
+        var startHour = parseInt(PF('startTimeWidget').getHours());    
+        if (parseInt(hour) >= startHour) {  
+            return true;  
+        }    
+        return false;  
+    }  
+      
+    function endOnMinuteShowCallback(hour, minute) {  
+        if (!PrimeFaces.widgets['startTimeWidget']) {  
+            return false;  
+        }        
+        var startHour = parseInt(PF('startTimeWidget').getHours());  
+        var startMinute = parseInt(PF('startTimeWidget').getMinutes());    
+        if (parseInt(hour) > startHour) {  
+            return true;  
+        }    
+        if ((parseInt(hour) == startHour) && (parseInt(minute) > startMinute)) {  
+            return true;  
+        }    
+        return false;  
+    }  
+/* ]]> */  
+</h:outputScript>       

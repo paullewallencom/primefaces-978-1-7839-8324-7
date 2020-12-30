@@ -1,0 +1,7 @@
+public int handleNavigation(SelectLevelEvent selectLevelEvent) {  
+        if (errorOccured) {  
+            return 2;  
+        } else {  
+            return selectLevelEvent.getNewLevel();  
+        }  
+}

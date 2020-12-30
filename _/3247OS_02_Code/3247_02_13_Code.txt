@@ -1,0 +1,6 @@
+<pe:triStateManyCheckbox id="tristatemany"  
+ value="#{triSateManyCheckBoxController.selectedVaule}" stateOneIcon="ui-icon-home"    stateTwoIcon="ui-icon-heart" stateThreeIcon="ui-icon-star"  
+       validatorMessage="State 0 is not allowed"> 
+ 	<f:converter converterId="triStateManyCheckboxConverter"/> 
+	<p:ajax update="growl" listener="#{triSateManyCheckBoxController.addMessage}"/> 
+</pe:triStateManyCheckbox>

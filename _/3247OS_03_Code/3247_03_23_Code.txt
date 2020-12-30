@@ -1,0 +1,12 @@
+<p:commandButton value="Block this page!" type="button"  
+                 onclick="PF('blockUIWidget').block()"/>  
+<pe:blockUI widgetVar="blockUIWidget"  
+            css="{top: '10px', left: '', right: '10px', cursor: 'wait'}"  
+            cssOverlay="{backgroundColor: 'red'}"  
+            timeout="3000"  
+            centerY="false">  
+    <h:panelGrid columns="2">  
+        <h:graphicImage library="images" name="ajax-loader.gif" />  
+        <h:outputText value="This is a non-centered message. Please wait..." />  
+    </h:panelGrid>  
+</pe:blockUI>

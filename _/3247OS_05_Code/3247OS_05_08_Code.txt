@@ -1,0 +1,30 @@
+<pe:timeline id="timeline" value="#{timelineController.model}" var="task"
+      timeZone="#{timelineController.timeZone}" zoomMax="#{timelineController.zoomMax}"
+      start="#{timelineController.start}" end="#{timelineController.end}"
+      editable="true" showButtonNew="true" widgetVar="timelineWdgt">
+    <p:ajax event="change" update="@none" listener="#{timelineController.onChange}"/>
+    <p:ajax event="edit" update=":eventsdata"
+            listener="#{timelineController.onEdit}"
+            oncomplete="PF('$eventsdlg').show()"/>
+    <p:ajax event="add" update=":eventsdata"
+            listener="#{timelineController.onAdd}"
+            oncomplete="PF('$eventsdlg').show()"/>
+    <p:ajax event="delete" update=":eventsdata"
+            listener="#{timelineController.onDelete}"
+            onstart="PF('timelineWdgt').cancelDelete()" oncomplete="alert('Are you ready to delete event')"/>
+        <h:outputText value="Title: #{task.title}"/>
+</pe:timeline>
+<p:dialog id="eventsDlg" header="Event Details" widgetVar="$eventsdlg">    
+            <h:outputText value="Title"/>  
+            <p:inputText value="#{timelineController.event.data.title}"/>  
+             <h:outputText value="Starte date"/>  
+	<p:calendar value="#{timelineController.event.startDate}"  
+      	 timeZone="#{timelineController.timeZone}"  
+      	 pattern="dd/MM/yyyy HH:mm" required="true" />  
+   <h:outputText value="End date"/>  
+         <p:calendar value="#{timelineController.event.endDate}"  
+          timeZone="#{timelineController.timeZone}"  
+          pattern="dd/MM/yyyy HH:mm"/> 
+	 <p:commandButton value="Save" process="eventsDlg" update="@none"  
+                             action="#{timelineController.saveDetails}"  
+</p:dialog>

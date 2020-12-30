@@ -1,0 +1,11 @@
+<p:commandButton value="Register" update=":employerForm" global="false"
+	actionListener="#{employerDetailsController.registerEmployer}"
+	onstart="PF('blockUIWidgetPage').block()" 
+	oncomplete="PF('blockUIWidgetPage').unblock()"></p:commandButton>
+<pe:blockUI widgetVar="blockUIWidgetPage">
+    <h:panelGrid columns="2">
+	<h:graphicImage value="/resources/images/process/ajax-loader.gif"
+	   style="margin-right: 12px; vertical-align: middle;" />
+		<h:outputText value="Please wait, data is being inserted..." style="white-space: nowrap;" />
+    </h:panelGrid>
+</pe:blockUI>

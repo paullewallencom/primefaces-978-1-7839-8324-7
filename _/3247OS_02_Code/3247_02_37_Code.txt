@@ -1,0 +1,12 @@
+protected void initialize() {  
+        model = new DynaFormModel();  
+        conditions = new ArrayList<Condition>();    
+        Condition condition = new Condition("model", 2, "eq", "mercedes", 0);  
+        conditions.add(condition);  
+        DynaFormRow row = model.createRegularRow();  
+        row.addControl(condition, "column");  
+        row.addControl(condition, "offset");  
+        row.addControl(condition, "operator");  
+        row.addControl(condition, "value");  
+        row.addControl(condition, "clear");  
+}

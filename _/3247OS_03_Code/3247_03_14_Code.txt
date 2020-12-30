@@ -1,0 +1,20 @@
+<h:outputScript id="waypointScript" target="body">  
+/* <![CDATA[ */ 
+    function handleWaypoint(ext) { 
+        var $active = $(ext.waypoint); 
+ 
+        if (ext.direction === "up") { 
+            $active = $active.prev(); 
+        } 
+         
+        if (!$active.length) $active.end(); 
+         
+        var cssProperty = $active.closest('.dial').data('property'); 
+        var cssValue = $active.data('value'); 
+         
+        if (cssProperty && cssValue) { 
+            $('#textContainer').css(cssProperty, cssValue); 
+        } 
+    } 
+/* ]]> */  
+</h:outputScript>

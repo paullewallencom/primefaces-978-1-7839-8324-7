@@ -1,0 +1,32 @@
+<pe:layout resizerTip="Resize Me" togglerTipClosed="Open Me"
+	fullPage="false" stateCookie="true" style="width:100%; height:650px;"
+	togglerTipOpen="Close Me">
+	 <pe:layoutPane position="east" size="300">
+	    <f:facet name="header">
+               Latest Updates
+      	    </f:facet>
+	    //Latest updates in table format goes here
+	 </pe:layoutPane>
+	 <pe:layoutPane position="center">
+		<h:form id="masterDetailform">
+		// List of posts,jobcategories,skills details using masterDetail
+                // component goes here
+		</h:form>
+	</pe:layoutPane>
+	<pe:layoutPane position="west" size="200">
+		<pe:layoutPane position="north" size="150">
+		   <f:facet name="header">
+			<h:outputText value="Search criteria for Job Posts" />
+		   </f:facet>
+			//Job search criteria goes here
+		</pe:layoutPane>
+		<pe:layoutPane position="center" size="200">
+	          <f:facet name="header">
+		  	<h:outputText value="Companies List" />
+	          </f:facet>
+		   <h:form id="companiesForm">
+		   //List of companies navigation link goes here
+		   </h:form>
+		</pe:layoutPane>
+	</pe:layoutPane>
+</pe:layout>

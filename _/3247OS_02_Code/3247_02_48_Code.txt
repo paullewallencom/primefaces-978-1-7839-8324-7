@@ -1,0 +1,2 @@
+<pe:codeMirror id="codeMirror" mode="#{codeMirrorController.mode}"  theme="eclipse" value="#{codeMirrorController.content}" lineNumbers="true"  
+ extraKeys="{ 'Ctrl-Space': function(cm) {CodeMirror.simpleHint(cm,CodeMirror.javascriptHint);}}" />

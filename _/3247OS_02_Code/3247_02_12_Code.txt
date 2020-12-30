@@ -1,0 +1,4 @@
+<pe:triStateCheckbox value="#{triStateCheckBoxController.value}"  
+  stateTwoIcon="ui-icon-plus"  stateThreeIcon="ui-icon-minus" itemLabel="Item  Label">
+	<p:ajax update="messages" listener="#{triStateCheckBoxController.addMessage}"/>
+</pe:triStateCheckbox>

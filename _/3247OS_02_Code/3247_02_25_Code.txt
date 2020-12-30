@@ -1,0 +1,8 @@
+<p:commandButton value="Load" type="button" onclick="lazyload()"/> 
+<pe:remoteCommand name="lazyload" update="lazypanel">  
+    <f:setPropertyActionListener value="#{true}"  
+                                 target="#{requestScope.shouldRender}" />  
+</pe:remoteCommand>  
+<p:outputPanel id="lazypanel" layout="block">  
+    <h:outputText  value="This part of page is lazily loaded on demand using a RemoteCommand"  rendered="#{requestScope.shouldRender}" />  
+</p:outputPanel>

@@ -1,0 +1,3 @@
+<h:inputText id="text" value="#{keyFilterController.value}">  
+        <pe:keyFilter regEx="/[XYZ]/i"/>  
+</h:inputText>

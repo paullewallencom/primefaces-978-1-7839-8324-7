@@ -1,0 +1,1 @@
+<pe:tooltip value="Type any value to filter datatable" for="@(#sharedTooltipTable th .ui-column-		filter)" shared="true"/>

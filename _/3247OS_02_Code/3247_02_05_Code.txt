@@ -1,0 +1,11 @@
+public class JobSeeker implements Serializable {
+	private String profession;
+	private Double experience=new Double(0);	
+	private Currency currentPack; 
+	private Currency expectedPack;
+public JobSeeker() {
+	currentPack=new Currency();
+	expectedPack=new Currency();
+}
+ //getters and setters
+}

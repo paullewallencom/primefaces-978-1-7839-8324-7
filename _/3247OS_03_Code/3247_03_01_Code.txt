@@ -1,0 +1,9 @@
+<pe:layout fullPage="false" style="width:450px; height:220px;"  
+   options="#{layoutController.layoutOptions}" state="#{layoutController.state}">  
+       <pe:layoutPane position="west">  
+            Left  
+       </pe:layoutPane>  
+       <pe:layoutPane position="center">  
+            Center  
+       </pe:layoutPane>  
+</pe:layout>

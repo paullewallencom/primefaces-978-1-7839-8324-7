@@ -1,0 +1,22 @@
+<p:panel header="Professional Information">
+<h:messages errorClass="error" />
+	<h:panelGrid columns="2" columnClasses="label, value">
+		<h:outputText value="Profession: *" />
+		<p:inputText id="profession" required="true" label="Profession"
+		value="#{employeeRegistration.jobseeker.profession}" />
+		<h:outputText value="Experience: " />
+		<pe:inputNumber value="#{employeeRegistration.jobseeker.experience}" 				required="true" minValue="0"
+		maxValue="30" emptyValue="empty" symbol="yrs" symbolPosition="s" 				roundMethod="s"/>
+		<h:outputText value="Current Package: " />
+		<pe:inputNumber value="#{employeeRegistration.jobseeker.currentPack}" symbol="$" 			emptyValue="empty" roundMethod="S"
+		decimalPlaces="2" decimalSeparator="," thousandSeparator="." symbolPosition="p" 			converter="inputNumberConverter" 
+		converterMessage="Entered value should be Currency type"/>
+		<h:outputText value="Expected Package: " />
+		<pe:inputNumber required="true" label="Expected Package" value="#				{employeeRegistration.jobseeker.expectedPack}"
+ 		symbol="$" emptyValue="zero" roundMethod="S" validatorMessage="The expected 				package should not be more than 20000"
+		decimalPlaces="2" decimalSeparator="," thousandSeparator="." symbolPosition="p" 			converter="inputNumberConverter" 
+		converterMessage="Entered value should be Currency type">
+		<f:validateDoubleRange maximum="20000"/>
+		</pe:inputNumber>
+	</h:panelGrid>
+</p:panel> 

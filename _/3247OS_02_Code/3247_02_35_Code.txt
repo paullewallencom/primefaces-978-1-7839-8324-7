@@ -1,0 +1,8 @@
+private FormField selectedField;
+       private String selectedItem;
+public void updateSelection() {  
+        FacesContext fc = FacesContext.getCurrentInstance();  
+        RequestContext rc = RequestContext.getCurrentInstance();    
+        // update the corresponding input field in UI  
+        rc.update(containerClientId + UINamingContainer.getSeparatorChar(fc) + "text");  
+ }  

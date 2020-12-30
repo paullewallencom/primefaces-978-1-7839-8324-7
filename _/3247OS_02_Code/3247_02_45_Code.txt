@@ -1,0 +1,11 @@
+<pe:codeMirror id="codeMirror" mode="#{codeMirrorController.mode}"  
+    theme="eclipse" value="#{codeMirrorController.content}" lineNumbers="true"/>    
+<p:commandButton actionListener="#{codeMirrorController.changeMode}" update="codeMirror"  	value="Change mode with AJAX"/>
+	Change the MIME type from javascript to css type
+public void changeMode() {  
+        if (mode.equals("css")) {  
+            mode = "javascript";  
+        } else {  
+            mode = "css";  
+        }  
+    }

@@ -1,0 +1,29 @@
+<pe:fluidGrid stamp="@(.pe-fluidgrid .stamp)" resizeBound="false" widgetVar="fluidGridWdgt">
+    <div class="stamp"></div>  
+    <pe:fluidGridItem styleClass="ui-widget-header w1 h1"/>
+    <pe:fluidGridItem styleClass="ui-widget-header w2 h2"/>
+    </div>
+</pe:fluidGrid>
+<h:outputScript id="fluidGridScript" target="body">
+    isStamped = true;
+    function toggleStamped() {
+        // stamp or unstamp element
+        if (isStamped) {
+            PF('fluidGridWdgt').unstamp($(".pe-fluidgrid .stamp").get());
+        } else {
+            PF('fluidGridWdgt').stamp($(".pe-fluidgrid .stamp").get());
+        }       
+        isStamped = !isStamped;
+    }
+</h:outputScript>
+<h:outputStylesheet id="fluidGridCSS">  
+    .pe-fluidgrid .stamp {
+        position: absolute;
+        right: 25%;
+        top: 15px;
+        width: 30%;
+        height: 40px;
+        background: blue;
+        border: 5px dotted black;
+    }
+</h:outputStylesheet>    

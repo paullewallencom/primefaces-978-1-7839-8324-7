@@ -1,0 +1,25 @@
+<pe:timePicker id="inlineTime" value="#{timePickerController.time1}" mode="inline">
+       <p:ajax event="timeSelect" listener="#{timePickerController.timeSelectListener}"/>
+  <p:ajax event="beforeShow" listener="#{timePickerController.beforeShowListener}"/>
+        <p:ajax event="close" listener="#{timePickerController.closeListener}" />
+</pe:timePicker> 
+<pe:timePicker value="#{timePickerController.time2}"
+   onHourShow="onHourShowCallback" onMinuteShow="onMinuteShowCallback"/>
+<h:outputScript id="timeRangeScript" target="body">  
+/* <![CDATA[ */   
+    function onHourShowCallback(hour) {  
+        if ((hour > 15) || (hour < 3)) {  
+            return false; // not valid  
+        }    
+        return true; // valid  
+    }  
+    function onMinuteShowCallback(hour, minute) {  
+        if ((hour == 15) && (minute >= 15)) {  
+            return false; // not valid  
+        }  
+        if ((hour == 3) && (minute < 15)) {  
+            return false; // not valid  
+        }          
+        return true;  // valid  
+    } 
+}

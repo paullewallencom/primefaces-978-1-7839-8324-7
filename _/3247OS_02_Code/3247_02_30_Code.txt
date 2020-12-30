@@ -1,0 +1,20 @@
+protected void initialize() {  
+        model = new DynaFormModel();  
+    // First row
+       DynaFormRow row = model.createRegularRow();
+        DynaFormLabel label11 = row.addLabel("Author");  
+        DynaFormControl control12 = row.addControl(new BookProperty("Author", true), "input");  
+        label11.setForControl(control12);  
+        DynaFormLabel label13 = row.addLabel("ISBN");  
+        DynaFormControl control14 = row.addControl(new BookProperty("ISBN", true), "input");  
+        label13.setForControl(control14);  
+        // second  row  
+       row = model.createRegularRow();
+     DynaFormLabel label21 = row.addLabel("Language");
+     DynaFormControl control22 = row.addControl(new BookProperty("Language", false), "select");
+    	label41.setForControl(control42);
+		DynaFormLabel label23 = row.addLabel("Description", 1, 2);
+		DynaFormControl control24 = row.addControl(new BookProperty("Description", 			false), "textarea", 1, 2);
+	label43.setForControl(control24);
+
+}

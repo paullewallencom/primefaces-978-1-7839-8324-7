@@ -1,0 +1,52 @@
+<pe:timeline id="timeline" value="#{timelineController.model}" var="task"
+             editable="true" eventMargin="6" eventMarginAxis="0"
+             showMajorLabels="false" axisOnTop="true"
+             groupsChangeable="true" groupsOnRight="false"
+             timeZone="America/New_York" widgetVar="timelineWdgt">
+    <p:ajax event="change" update="@none" listener="#{timelineController.onChange}"/>
+    <p:ajax event="delete" update="@none" listener="#{timelineController.onDelete}"/>
+    <p:ajax event="add" update="@none" onstart="PF('timelineWdgt').cancelAdd()"/>
+
+    <h:outputText value="Task #{task.title}"/>
+</pe:timeline>
+                
+// Dialog with overlapped timeline events
+<p:dialog id="overlapEventsDlg" header="Overlapped tasks" widgetVar="overlapEventsWdgt">
+    <h:panelGroup id="overlappedTasks" layout="block" >
+            Please choose tasks you want to merge with the task #{timelineController.selectedTask}  
+        <p:selectManyMenu id="overlappedTask" value="#{timelineController.tasksToMerge}"
+                          showCheckbox="true">
+            <f:selectItems value="#{groupingTimelineController.overlappedTasks}" var="task"
+                           itemLabel=" Task #{task.data.title}" itemValue="#{task}" converter="taskconverter"/>
+        </p:selectManyMenu>
+    </h:panelGroup>
+
+    <f:facet name="footer">
+            <p:commandButton value="Merge" process="overlapEventsDlg" update="@none"
+                             action="#{timelineController.merge}"
+                             oncomplete="PF('overlapEventsWdgt').hide()"/>
+            <p:commandButton type="button" value="Close" onclick="PF('overlapEventsWdgt').hide()"/>
+    </f:facet>
+</p:dialog>
+//Server side java code to get overlapped tasks and merge the tasks
+//Get the overlapped tasks
+ public void onChange(TimelineModificationEvent e) {   
+        event = e.getTimelineEvent();  
+        model.update(event);   
+        TreeSet<TimelineEvent> overlappedEvents = model.getOverlappedEvents(event);  
+        if (overlappedEvents == null) {  
+            return;  
+	} 
+        overlappedTasks = new ArrayList<TimelineEvent>(overlappedEvents);   
+        tasksToMerge = null;  
+    }
+// merge the tasks
+public void merge() {  
+        // merge tasks which are selected 
+        if (tasksToMerge != null && !tasksToMerge.isEmpty()) {  
+            model.merge(event, tasksToMerge, TimelineUpdater.getCurrentInstance(":timeline"));  
+        } 
+        overlappedTasks = null;  
+        tasksToMerge = null;  
+    }  
+            
